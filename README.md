@@ -50,7 +50,7 @@ Can be used with tailwindcss.
 - `placeholder` - placeholder of the input tag
 - `value` - selected value
 - `defaultValue` - default value
-- `searchMode` - "include" | "start"
+- `searchMode` - "include" | "start". default("start")
 - `name` - name of the input tag
 - `containerClass` - container class
 - `inputClass` - input class
