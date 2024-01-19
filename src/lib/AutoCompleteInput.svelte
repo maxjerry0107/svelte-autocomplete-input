@@ -139,9 +139,6 @@
 </div>
 
 <style>
-  .autocomplete {
-    width: 100%;
-  }
   .autocomplete input {
     display: block;
     width: 100%;
