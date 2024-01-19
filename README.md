@@ -5,7 +5,7 @@ Autocomplete input made with [Svelte](https://svelte.dev/).
 ## Install
 
 ```bash
-npm install -D autocomplete-input
+npm install -D svelte-autocomplete-input
 ```
 
 ## Usage
