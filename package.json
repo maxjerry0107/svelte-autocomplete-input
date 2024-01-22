@@ -1,6 +1,6 @@
 {
 	"name": "svelte-autocomplete-input",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "Svelte Autocomplete input",
 	"license": "MIT",
 	"keywords": [
@@ -16,6 +16,7 @@
 		"type": "git",
 		"url": "https://github.com/maxjerry0107/svelte-autocomplete-input"
 	},
+	"homepage": "https://svelte-autocomplete-input.vercel.app",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
