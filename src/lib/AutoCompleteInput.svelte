@@ -87,7 +87,9 @@
 
   const navigateList = (e: KeyboardEvent) => {
     if (e.key === "ArrowDown" && hiLiteIndex <= filteredItems.length - 1) {
-      hiLiteIndex === null ? (hiLiteIndex = 0) : (hiLiteIndex += 1);
+      hiLiteIndex === null || hiLiteIndex == filteredItems.length - 1
+        ? (hiLiteIndex = 0)
+        : (hiLiteIndex += 1);
     } else if (e.key === "ArrowUp" && hiLiteIndex !== null) {
       hiLiteIndex === 0
         ? (hiLiteIndex = filteredItems.length - 1)
