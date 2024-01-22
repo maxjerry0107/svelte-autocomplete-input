@@ -1,6 +1,6 @@
 {
 	"name": "svelte-autocomplete-input",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "Svelte Autocomplete input",
 	"license": "MIT",
 	"keywords": [
@@ -8,7 +8,6 @@
 		"svelteKit",
 		"autocomplete",
 		"svelte-components",
-		"autocomplete",
 		"auto complete",
 		"autosuggest",
 		"auto suggest"

@@ -16,6 +16,7 @@
   export let inputStyle: string = "";
   export let itemStyle: string = "";
 
+  export let borderColor: string = "#000000";
   export let itemBackColor: string = "#ffffff";
   export let itemColor: string = "#000000";
   export let selectedItemBackColor: string = "#000000";
@@ -119,7 +120,7 @@
   />
   <div
     class="autocomplete-list-container"
-    style="--item-bg:{itemBackColor}; --item-color:{itemColor};--selected-item-bg:{selectedItemBackColor}; --selected-item-color:{selectedItemColor};"
+    style="--border-color:{borderColor};--item-bg:{itemBackColor}; --item-color:{itemColor};--selected-item-bg:{selectedItemBackColor}; --selected-item-color:{selectedItemColor};"
   >
     {#if filteredItems.length > 0}
       <div class="autocomplete-list">
@@ -139,9 +140,15 @@
 </div>
 
 <style>
+  .autocomplete * {
+    box-sizing: border-box;
+    border-color: var(--border-color);
+  }
   .autocomplete input {
     display: block;
     width: 100%;
+    border-style: solid;
+    border-width: 1px;
   }
   .autocomplete input:focus-visible {
     outline-width: 0px;
@@ -151,6 +158,8 @@
   }
   .autocomplete-list {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     max-height: 192px;
     width: 100%;
@@ -165,6 +174,9 @@
     text-align: inherit;
     cursor: pointer;
     appearance: none;
+    border-style: solid;
+    border-width: 1px;
+    border-top: 0;
   }
   .autocomplete-list-item.selected {
     background-color: var(--selected-item-bg);

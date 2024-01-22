@@ -6,7 +6,6 @@
   function handleChange(e: Event): void {
     console.log(color);
   }
-  $: console.log(color);
 </script>
 
 <AutoCompleteInput
