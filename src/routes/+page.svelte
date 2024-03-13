@@ -1,5 +1,6 @@
 <script lang="ts">
   import AutoCompleteInput from "$lib/AutoCompleteInput.svelte";
+  import type { ComponentEvents } from "svelte";
 
   import HighlightSvelte, { LineNumbers } from "svelte-highlight";
   import typescript from "svelte-highlight/languages/typescript";
@@ -9,9 +10,8 @@
     import AutoCompleteInput from "$lib/AutoCompleteInput.svelte";
     const colors = ["White", "Red", "Yellow", "Green", "Blue", "Black"];
 
-    let color: string;
-    function handleChange(e: Event): void {
-      console.log(color);
+    function handleChange(event: ComponentEvents<AutoCompleteInput>['onChangeValue']): void {
+      console.log(event.detail);
     }
   <\/script>
 
@@ -20,15 +20,13 @@
     containerStyle="width:100px"
     placeholder="Colors"
     items={colors}
-    on:blur={handleChange}
-    bind:value={color}
+    on:onChangeValue={handleChange}
   />
   `;
   const colors = ["White", "Red", "Yellow", "Green", "Blue", "Black"];
 
-  let color: string;
-  function handleChange(e: Event): void {
-    console.log(color);
+  function handleChange(event: ComponentEvents<AutoCompleteInput>['onChangeValue']): void {
+    console.log(event.detail);
   }
 </script>
 
@@ -48,8 +46,7 @@
     containerStyle="width:100px"
     placeholder="Colors"
     items={colors}
-    on:blur={handleChange}
-    bind:value={color}
+    on:onChangeValue={handleChange}
   />
 </div>
 

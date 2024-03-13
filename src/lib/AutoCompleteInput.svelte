@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { createEventDispatcher, onMount } from "svelte";
+
+	const dispatch = createEventDispatcher();
 
   export let placeholder: string = "";
   export let items: string[] = [];
-  export let value;
   export let defaultValue = "";
   export let searchMode: "include" | "start" = "start";
   export let name: string | null = null;
@@ -60,6 +61,7 @@
     filteredItems = [];
     hiLiteIndex = -1;
     searchInputRef.focus();
+    dispatch('onChangeValue', {value:inputValue})
   };
 
   const makeMatchBold = (str: string) => {
@@ -80,8 +82,6 @@
   };
 
   let hiLiteIndex: number = -1;
-
-  $: value = filteredItems[hiLiteIndex] || inputValue;
 
   $: inputValue = defaultValue;
 

@@ -15,16 +15,17 @@ Import the component and define items:
 ```javascript
 import AutoCompleteInput from "svelte-autocomplete-input"
 
-const colors = ["White", "Red", "Yellow", "Green", "Blue", "Black"]
-let selectedColor
+const colors = ["White", "Red", "Yellow", "Green", "Blue", "Black"];
+
+function handleChange(event: ComponentEvents<AutoCompleteInput>['onChangeValue']): void {
+  console.log(event.detail);
+}
 
 <AutoCompleteInput
   name="color"
   placeholder="Colors"
   items={colors}
-  on:change={handleChange}
-  on:blur={handleChange}
-  bind:value={selectedColor}
+  on:onChangeValue={handleChange}
 />
 
 ```
@@ -36,9 +37,7 @@ Can be used with tailwindcss.
   name="color"
   placeholder="Colors"
   items={colors}
-  on:change={handleChange}
-  on:blur={handleChange}
-  bind:value={selectedColor}
+  on:onChangeValue={handleChange}
   inputClass="rounded border p-3"
   itemClass="border border-t-0 py-3 px-2 text-left"
 />
@@ -48,7 +47,6 @@ Can be used with tailwindcss.
 
 - `items` - array of items the user can select from
 - `placeholder` - placeholder of the input tag
-- `value` - selected value
 - `defaultValue` - default value
 - `searchMode` - "include" | "start". default("start")
 - `name` - name of the input tag
